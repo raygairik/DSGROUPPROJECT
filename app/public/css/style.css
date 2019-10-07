@@ -1,0 +1,32 @@
+.navbar {
+font-size: 100%;
+background-color: white;
+border: 10px solid maroon;
+border-radius: 15px;
+}
+
+header {
+font-size: 105%;
+background-color: maroon;
+color: white;
+padding-left: 10px;
+padding-top:10px;
+padding-right: 10px;
+}
+
+#TitleWords{
+text-align: bottom;
+margin-left: 10px;
+}
+
+h1 {
+font-size: 300%;
+margin-bottom: 10px;
+margin-top: 0px;
+color: white;
+
+}
+
+body {
+background-color: lightgrey;
+}
