@@ -5,6 +5,32 @@ border: 10px solid maroon;
 border-radius: 15px;
 }
 
+.col-sm-4{
+text-align: center;
+align-items: center;
+color: maroon;
+font-family: sans-serif;
+padding: 10px
+}
+.station{
+text-align: center;
+align-items: center;
+color: midnightblue;
+font-family: sans-serif;
+padding: 10px
+}
+#HomePic {
+  border:10px solid maroon;
+  align-content: center;
+  width: 920px;
+}
+#ContactImg{
+border:10px solid maroon;
+align-content: center;
+width: 250px;
+height: 400px;
+}
+
 header {
 font-size: 105%;
 background-color: maroon;
@@ -25,7 +51,16 @@ margin-bottom: 10px;
 margin-top: 0px;
 color: white;
 padding: inherit;
+}
 
+h2 {
+  color: maroon;
+  font-size: 48px;
+}
+
+h3{
+color: black;
+font-style: italic;
 }
 
 body {
