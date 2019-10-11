@@ -61,6 +61,37 @@
     </div>
   </div>
 </div>
+<h1>Existing Members</h1>
+<table class="table table-sm table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>ZIP</th>
+      <th>Phone1</th>
+      <th>Phone2</th>
+      <th>Radio#</th>
+      <th>Station</th>
+      <th>Certifications</th>
+          </tr>
+  </thead>
+  <tbody>
+    <tr v-for="p in patients" @click="handleRowClick(p)">
+      <td>{{ p.Name }}</td>
+      <td>{{ p.Address }}</td>
+      <td>{{ p.City }}</td>
+      <td>{{ p.State }}</td>
+      <td>{{ p.ZIP }}</td>
+      <td>{{ p.Phone1 }}</td>
+      <td>{{ p.Phone2 }}</td>
+      <td>{{ p.Radio }}</td>
+      <td>{{ p.Station }}</td>
+      <td>{{ p.Certifications}}</td>
+    </tr>
+  </tbody>
+</table>
 <h1 style="background-color:rgb(o,o,o);">Add A Member</h1><form>
   <div class="form-group">
     <label for="exampleInputEmail1"><h4>Name</h4></label>
