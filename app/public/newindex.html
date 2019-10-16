@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div id="mainContent" class="col-md">
+      <div id="MemberRecordsApp">
+        <form @submit.prevent="handleSubmit">
+          <div class="form-group row">
+            <label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" v-model="recordMember.firstName">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputLastName" class="col-sm-2 col-form-label">Last Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" v-model="recordMember.lastName">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputGender" class="col-sm-2 col-form-label">Gender</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputGender" placeholder="M|F" v-model="recordMember.Gender">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputDob" class="col-sm-2 col-form-label">DOB</label>
+            <div class="col-sm-10">
+              <input type="date" class="form-control" id="inputDob" placeholder="2001-12-13" v-model="recordMember.dob">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputEmail" placeholder="mail@gmail.com" v-model="recordMember.email">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main Street" v-model="recordMember.address">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputCity" class="col-sm-2 col-form-label">City</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputCity" placeholder="Chicago" v-model="recordMember.city">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-primary">Create Patient Record</button>
+            </div>
+          </div>
+        </form>
