@@ -65,37 +65,63 @@
 <table class="table table-sm table-hover">
   <thead>
     <tr>
-      <th>Certification Name</th>
+      <th>Certification ID</th>
       <th>Certifying Agency</th>
+      <th>Certification Name</th>
       <th>Expiration Period</th>
     </tr>
   </thead>
   <tbody>
-    <tr v-for="p in patients" @click="handleRowClick(p)">
-      <td>{{ p.Certification }}</td>
-      <td>{{ p.Agency }}</td>
-      <td>{{ p.Period }}</td>
+    <tr v-for="c in certifications" @click="handleRowClick(p)">
+      <td>{{ p.CertificationID}}</td>
+      <td>{{ p.certifyingAgency }}</td>
+      <td>{{ p.certificationName}}</td>
+      <td>{{ p.expirationPeriod }}</td>
     </tr>
   </tbody>
 </table>
 <h1 style="background-color:rgb(o,o,o);">Add A Certification</h1><form>
-  <div class="form-group">
-    <label for="exampleInputEmail1"><h4>Certification Name</h4></label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Certification Name">
-    <small id="emailHelp" class="form-text text-muted"></small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1"><h4>Certifying Agency</h4></label>
-    <input type="text" class="form-control" id="InputAGency" placeholder="Red Cross">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1"><h4>Default Expiration Period (In Years)</h4></label>
-    <input type="integer" class="form-control" id="InputExpiration" placeholder="2">
-  </div>
+  <div class="container">
+    <div class="row">
+      <div id="mainContent" class="col-md">
+        <div id="CertificationRecordsApp">
+          <form @submit.prevent="handleSubmit">
+            <div class="form-group row">
+              <label for="inputcertificationID" class="col-sm-2 col-form-label">Certification ID</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputcertificationID" placeholder="00000" v-model="recordCertification.CertificationID">
+              </div>
+            </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="form-group row">
+              <label for="inputcertifyingAgency" class="col-sm-2 col-form-label">Certifying Agency</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputcertifyingAgency" placeholder="American Red Cross" v-model="recordCertification.certifyingAgency">
+              </div>
+            </div>
 
-</form>
+            <div class="form-group row">
+              <label for="inputcertificationName" class="col-sm-2 col-form-label">Certification Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputcertificationName" placeholder="CPR Certified" v-model="recordCertification.certificationName">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputexpirationPeriod" class="col-sm-2 col-form-label">Expiration Period</label>
+              <div class="col-sm-10">
+                <input type="integer" class="form-control" id="inputexpirationPeriod" placeholder="3" v-model="recordCertification.expirationPeriod">
+              </div>
+            </div>
+
+
+
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Create Certification</button>
+              </div>
+            </div>
+          </form>
 <script src="js/tablesort.min.js"></script>
 <script>
   // Tablesort plugin from https://github.com/tristen/tablesort

@@ -31,7 +31,7 @@ var MemberRecordsApp = new Vue({
         },
   handleReset() {
     this.recordMember = {
-      // memberID: '',
+      memberID: '',
       firstName: '',
       lastName: '',
       dob: '',
@@ -39,14 +39,14 @@ var MemberRecordsApp = new Vue({
       Email: '',
       address: '',
       City: '',
-      // State: '',
-      // ZIPCode: '',
-      // workPhoneNumber: '',
-      // mobilePhoneNumber: '',
-      // departmentPosition: '',
-      // Radio: '',
-      // Station: '',
-      // isActive: ''
+      State: '',
+      ZIPCode: '',
+      workPhoneNumber: '',
+      mobilePhoneNumber: '',
+      departmentPosition: '',
+      Radio: '',
+      Station: '',
+      isActive: ''
 
     }
   },
