@@ -1,40 +1,61 @@
 var MemberRecordsApp = new Vue({
   el: '#MemberRecordsApp',
   data: {
-    member: {}
+    members: [],
+    recordMember: {}
+
   },
   methods: {
-    handleSubmit() {
-      fetch('api/waiting/post.php', {
-        method: 'POST',
-        body: JSON.stringify(this.member),
-        headers: {
-          "Content-Type": "application/json; charset=utf-8"
-        }
-      })
-      .then( response => response.json() )
-      .then( json => {waitingApp.patients = json})
-      .catch( err => {
-        console.error('TRIAGE POST ERROR:');
-        console.error(err);
-      })
+    fetchMembers() {
+      fetch('api/records/')
+      .then(response => response.json())
+      .then(json => { MemberRecordsApp.members = json})
 
-      this.handleReset();
     },
-    handleReset() {
-      this.patient = {
-        memberId: '',
-        firstName: '',
-        lastName: '',
-        dob: '',
-        sexAtBirth: '',
-        visitDescription: '',
-        // visitDateUtc
-        priority: 'low'
-      }
+
+    handleSubmit(event) {
+          fetch('api/records/member.php', {
+            method: 'POST',
+            body: JSON.stringify(this.recordMember),
+            headers: {
+              "Content-Type": "application/json; charset=utf-8"
+            }
+          })
+          .then( response => response.json() )
+          .then( json => {MemberRecordsApp.members.push( json[0] )})
+          .catch( err => {
+            console.error('RECORD POST ERROR:');
+            console.error(err);
+          });
+          this.handleReset();
+        },
+  handleReset() {
+    this.recordMember = {
+      // memberID: '',
+      firstName: '',
+      lastName: '',
+      dob: '',
+      Gender: '',
+      Email: '',
+      address: '',
+      City: '',
+      // State: '',
+      // ZIPCode: '',
+      // workPhoneNumber: '',
+      // mobilePhoneNumber: '',
+      // departmentPosition: '',
+      // Radio: '',
+      // Station: '',
+      // isActive: ''
+
     }
   },
-  created() {
-    this.handleReset();
+  handleRowClick(members) {
+    memberTriageApp.member = Member;
   }
+}, // end methods
+created() {
+  this.handleReset();
+  this.fetchMembers();
+}
 });

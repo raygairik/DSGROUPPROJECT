@@ -4,12 +4,13 @@
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-if (isset($_GET['guid'])) {
+if (isset($_GET['mid'])) {
   $stmt = $db->prepare(
     'SELECT * FROM Member
-    WHERE memberGuid = ?'
+    WHERE memberID = ?'
   );
-  $stmt->execute([$_GET['guid']]);
+
+  $stmt->execute([$_GET['mid']]);
 } else {
   $stmt = $db->prepare('SELECT * FROM Member');
   $stmt->execute();
