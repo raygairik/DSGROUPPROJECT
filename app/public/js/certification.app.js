@@ -7,7 +7,7 @@ var CertificationsApp = new Vue({
   },
   methods: {
     fetchCertifications() {
-      fetch('api/records/')
+      fetch('api/records/certification.php')
       .then(response => response.json())
       .then(json => { CertificationsApp.certifications = json})
 

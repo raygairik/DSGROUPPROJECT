@@ -40,7 +40,7 @@
 </div>
 <br>
 </table>
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col">
     </div>
@@ -59,31 +59,34 @@
 
     </div>
   </div>
-</div>
-<h1>Available Certifications</h1>
-<table class="table table-sm table-hover">
-  <thead>
-    <tr>
-      <th>Certification ID</th>
-      <th>Certifying Agency</th>
-      <th>Certification Name</th>
-      <th>Expiration Period</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-for="c in certifications" @click="handleRowClick(p)">
-      <td>{{ p.CertificationID}}</td>
-      <td>{{ p.certifyingAgency }}</td>
-      <td>{{ p.certificationName}}</td>
-      <td>{{ p.expirationPeriod }}</td>
-    </tr>
-  </tbody>
-</table>
+</div> -->
+
 <h1 style="background-color:rgb(o,o,o);">Add A Certification</h1><form>
   <div class="container">
     <div class="row">
       <div id="mainContent" class="col-md">
         <div id="CertificationsApp">
+
+          <h1>Available Certifications</h1>
+          <table class="table table-sm table-hover">
+            <thead>
+              <tr>
+                <th>Certification ID</th>
+                <th>Certifying Agency</th>
+                <th>Certification Name</th>
+                <th>Expiration Period</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="c in certifications" @click="handleRowClick(c)">
+                <td>{{ c.CertificationID}}</td>
+                <td>{{ c.certifyingAgency }}</td>
+                <td>{{ c.certificationName}}</td>
+                <td>{{ c.expirationPeriod }}</td>
+              </tr>
+            </tbody>
+          </table>
+
           <form @submit.prevent="handleSubmit">
             <div class="form-group row">
               <label for="inputcertificationID" class="col-sm-2 col-form-label">Certification ID</label>
