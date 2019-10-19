@@ -14,7 +14,7 @@ $stmt = $db->prepare(
 );
 $stmt->execute([
   $mid,
-  $_POST['memberID'],
+  // $_POST['memberID'],
   $_POST['firstName'],
   $_POST['lastName'],
   $_POST['dob'],
@@ -29,8 +29,9 @@ $stmt->execute([
   $_POST['departmentPosition'],
   $_POST['Radio'],
   $_POST['Station'],
-  $_POST['isActive'],
+  $_POST['isActive']
 ]);
+
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../records/?mid='.$mid);
+header('Location: ../records/member.php/?mid='.$mid);

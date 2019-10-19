@@ -3,252 +3,249 @@
 <head>
   <title>OCFR Page</title>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<header>
-<div class="row">
-    <div class="col-xs-3 col-sm-2 col-md-1 col-lg-1">
+
+<body>
+  <header>
+    <div class="row">
+      <div class="col-xs-3 col-sm-2 col-md-1 col-lg-1">
         <div id="TitleImage"><img src="img/logo.png" width="92">
         </div>
-    </div>
-        <div class="col-xs-7 col-sm-6 col-md-5" "col-lg-5" id=TitleWords>
-            <div class="row"><h1 class=whitewords>Oconee County Fire Rescue</h1>
-            </div>
-            <div class="row"><h4><i>"Stop, Drop, and Roll!"</i></h4>
-            </div>
+      </div>
+      <div class="col-xs-7 col-sm-6 col-md-5 col-lg-5" id="TitleWords">
+        <div class="row">
+          <h1 class="whitewords">Oconee County Fire Rescue</h1>
         </div>
+        <div class="row">
+          <h4><i>"Stop, Drop, and Roll!"</i></h4>
+        </div>
+      </div>
     </div>
 
 
-<div class="row">
-<nav class="navbar navbar-default">
-
-<div class="navbar-default" id="myMenu">
-  <ul class="nav navbar-nav">
-<li class="nav-item active">
-          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-        </li>
-<li class="nav-item active">
-          <a class="nav-link" href="members.html">Members <span class="sr-only">(current)</span></a>
-        </li>
-<li class="nav-item active">
-          <a class="nav-link" href="certifications.html">Certifications <span class="sr-only">(current)</span></a>
-        </li>
-</ul>
-</div>
-</nav>
-</div>
-<br>
-</table>
-<div class="container">
-  <div class="row">
-    <div class="col">
-    </div>
-    <div class="col">
-
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-
-    </div>
-    <div class="col">
-
-    </div>
-    <div class="col">
-
-    </div>
-  </div>
-</div>
-<h1>Existing Members</h1>
-<table class="table table-sm table-hover">
-  <thead>
-    <tr>
-      <th>Member ID</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Gender</th>
-      <th>DOB</th>
-      <th>Email</th>
-      <th>Address</th>
-      <th>City</th>
-      <th>State</th>
-      <th>ZIP Code</th>
-      <th>Work Phone Number</th>
-      <th>Mobile Phone Number</th>
-      <th>Department Position</th>
-      <th>Radio</th>
-      <th>Station</th>
-      <th>isActive</th>
-      </tr>
-  </thead>
-  <tbody>
-    <tr v-for="m in Members" @click="handleRowClick(p)">
-      <td>{{ m.memberID}}</td>
-      <td>{{ m.firstName }}</td>
-      <td>{{ m.lastName }}</td>
-      <td>{{ m.Gender }}</td>
-      <td>{{ m.DOB }}</td>
-      <td>{{ m.Email }}</td>
-      <td>{{ m.Address }}</td>
-      <td>{{ m.City }}</td>
-      <td>{{ m.State }}</td>
-      <td>{{ m.ZIPCode }}</td>
-      <td>{{ m.workPhoneNumber }}</td>
-      <td>{{ m.mobilePhoneNumber }}</td>
-      <td>{{ m.departmentPosition }}</td>
-      <td>{{ m.Radio }}</td>
-      <td>{{ m.Station }}</td>
-      <td>{{ m.isActive }}</td>
-    </tr>
-  </tbody>
-</table>
-<h1 style="background-color:rgb(o,o,o);">Add A Member</h1><form>
-  <div class="container">
     <div class="row">
-      <div id="mainContent" class="col-md">
-        <div id="MemberRecordsApp">
-          <form @submit.prevent="handleSubmit">
+      <nav class="navbar navbar-default">
 
-            <div class="form-group row">
+        <div class="navbar-default" id="myMenu">
+          <ul class="nav navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="members.html">Members <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="certifications.html">Certifications <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+    <br>
+     <div class="container">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+
+    </div>
+    <div class="col">
+
+    </div>
+    <div class="col">
+
+    </div>
+  </div>
+</div>
+    <h1 style="background-color:rgb(o,o,o);">Add A Member</h1>
+      <div class="container">
+        <div class="row">
+          <div id="mainContent" class="col-md">
+            <div id="MemberRecordsApp">
+              <h1>Existing Members</h1>
+              <table class="table table-sm table-hover">
+                <thead>
+                  <tr>
+                    <th>Member ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Gender</th>
+                    <th>DOB</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>ZIP Code</th>
+                    <th>Work Phone Number</th>
+                    <th>Mobile Phone Number</th>
+                    <th>Department Position</th>
+                    <th>Radio</th>
+                    <th>Station</th>
+                    <th>isActive</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="m in members" @click="handleRowClick(m)">
+                    <td>{{ m.memberID }}</td>
+                    <td>{{ m.firstName }}</td>
+                    <td>{{ m.lastName }}</td>
+                    <td>{{ m.Gender }}</td>
+                    <td>{{ m.DOB }}</td>
+                    <td>{{ m.Email }}</td>
+                    <td>{{ m.address }}</td>
+                    <td>{{ m.City }}</td>
+                    <td>{{ m.State }}</td>
+                    <td>{{ m.ZIPCode }}</td>
+                    <td>{{ m.workPhoneNumber }}</td>
+                    <td>{{ m.mobilePhoneNumber }}</td>
+                    <td>{{ m.departmentPosition }}</td>
+                    <td>{{ m.Radio }}</td>
+                    <td>{{ m.Station }}</td>
+                    <td>{{ m.isActive }}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <form @submit.prevent="handleSubmit">
+
+                 <div class="form-group row">
               <label for="inputmemberID" class="col-sm-2 col-form-label">Member ID</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="inputmemberID" placeholder="00000" v-model="recordMember.memberID">
               </div>
             </div>
 
-            <div class="form-group row">
-              <label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" v-model="recordMember.firstName">
+                <div class="form-group row">
+                  <label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" v-model="recordMember.firstName">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="inputLastName" class="col-sm-2 col-form-label">Last Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" v-model="recordMember.lastName">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="inputGender" class="col-sm-2 col-form-label">Gender</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputGender" placeholder="M|F" v-model="recordMember.Gender">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="inputDob" class="col-sm-2 col-form-label">DOB</label>
+                  <div class="col-sm-10">
+                    <input type="date" class="form-control" id="inputDob" placeholder="2001-12-13" v-model="recordMember.dob">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputEmail" placeholder="mail@gmail.com" v-model="recordMember.email">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main Street" v-model="recordMember.address">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="inputCity" class="col-sm-2 col-form-label">City</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputCity" placeholder="Chicago" v-model="recordMember.city">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="inputState" class="col-sm-2 col-form-label">State</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputState" placeholder="Chicago" v-model="recordMember.State">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="inputZIPCode" class="col-sm-2 col-form-label">ZIPCode</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputZIPCode" placeholder="60680" v-model="recordMember.ZIPCode">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="inputworkPhoneNumber" class="col-sm-2 col-form-label">Work Phone Number</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputworkPhoneNumber" placeholder="123-123-1234" v-model="recordMember.workPhoneNumber">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="inputmobilePhoneNumber" class="col-sm-2 col-form-label">Mobile Phone Number</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputmobilePhoneNumber" placeholder="123-123-1234" v-model="recordMember.mobilePhoneNumber">
+                  </div>
+                </div>
+
+                 <div class="form-group row">
+                  <label for="inputdepartmentPosition" class="col-sm-2 col-form-label">Department Position</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputdepartmentPosition" placeholder="Fire Marshall" v-model="recordMember.departmentPosition">
+                  </div>
+                </div>
+
+                 <div class="form-group row">
+                  <label for="inputRadio" class="col-sm-2 col-form-label">Radio Number</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputRadio" placeholder="123" v-model="recordMember.Radio">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="inputStation" class="col-sm-2 col-form-label">Station Number</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputStation" placeholder="3" v-model="recordMember.Station">
+                  </div>
+                </div>
+
+                 <div class="form-group row">
+                  <label for="inputisActive" class="col-sm-2 col-form-label">Active Employee</label>
+                  <div class="col-sm-10">
+                    <select class="form-control" id="inputisActive" placeholder="Yes" v-model="recordMember.isActive">
+                      <option value="0">Yes</option>
+                      <option value="1">No</option>
+                    </select>
+                  </div>
+                </div>
+
+                 <div class="form-group row">
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Create Member Record</button>
+                  </div>
+                </div>
+
+                </form>
               </div>
             </div>
+          </div>
+        </div>
 
-            <div class="form-group row">
-              <label for="inputLastName" class="col-sm-2 col-form-label">Last Name</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" v-model="recordMember.lastName">
-              </div>
-            </div>
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+            <script src="js/members.app.js"></script>
 
-            <div class="form-group row">
-              <label for="inputGender" class="col-sm-2 col-form-label">Gender</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputGender" placeholder="M|F" v-model="recordMember.Gender">
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label for="inputDob" class="col-sm-2 col-form-label">DOB</label>
-              <div class="col-sm-10">
-                <input type="date" class="form-control" id="inputDob" placeholder="2001-12-13" v-model="recordMember.dob">
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputEmail" placeholder="mail@gmail.com" v-model="recordMember.email">
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main Street" v-model="recordMember.address">
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label for="inputCity" class="col-sm-2 col-form-label">City</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputCity" placeholder="Chicago" v-model="recordMember.city">
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label for="inputState" class="col-sm-2 col-form-label">State</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputState" placeholder="Chicago" v-model="recordMember.State">
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label for="inputZIPCode" class="col-sm-2 col-form-label">ZIPCode</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputZIPCode" placeholder="60680" v-model="recordMember.ZIPCode">
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label for="inputworkPhoneNumber" class="col-sm-2 col-form-label">Work Phone Number</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputworkPhoneNumber" placeholder="123-123-1234" v-model="recordMember.workPhoneNumber">
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label for="inputmobilePhoneNumber" class="col-sm-2 col-form-label">Mobile Phone Number</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputmobilePhoneNumber" placeholder="123-123-1234" v-model="recordMember.mobilePhoneNumber">
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label for="inputdepartmentPosition" class="col-sm-2 col-form-label">Department Position</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputdepartmentPosition" placeholder="Fire Marshall" v-model="recordMember.departmentPosition">
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label for="inputdepartmentPosition" class="col-sm-2 col-form-label">Department Position</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputdepartmentPosition" placeholder="Fire Marshall" v-model="recordMember.departmentPosition">
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label for="inputRadio" class="col-sm-2 col-form-label">Radio Number</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputRadio" placeholder="123" v-model="recordMember.Radio">
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label for="inputStation" class="col-sm-2 col-form-label">Station Number</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputStation" placeholder="3" v-model="recordMember.Station">
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label for="inputisActive" class="col-sm-2 col-form-label">Active Employee</label>
-              <div class="col-sm-10">
-                <select class="form-control" id="inputStation" placeholder="Yes" v-model="recordMember.isActive">
-                  <option value="0">Yes</option>
-                  <option value="1">No</option>
-                </select>
-              </div>
-            </div>
-
-
-            <div class="form-group row">
-              <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary">Create Member Record</button>
-              </div>
-            </div>
-          </form>
-
-
-
-</div>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script src="js/members.app.js"></script>
-</nav>
-</header>
-
-
+</body>
 </html>

@@ -14,7 +14,7 @@ var CertificationsApp = new Vue({
     },
 
     handleSubmit(event) {
-          fetch('api/records/certification.php', {
+          fetch('api/records/certificationpost.php', {
             method: 'POST',
             body: JSON.stringify(this.recordCertification),
             headers: {
@@ -38,9 +38,23 @@ var CertificationsApp = new Vue({
 
     }
   },
-  handleRowClick(members) {
-    memberTriageApp.certification = Certification;
-  }
+  handleRowClick(certifications) {
+    EditcertificationApp.recordCertification = certifications;
+  },
+    deleteTransaction(C){
+      fetch('api/records/certificationDelete.php', {
+        method: 'POST',
+        body: JSON.stringify(c),
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+      })
+      .then( response => response.json() )
+      .then( json => {CertificationsApp.certifications = json})
+    }
+
+
+
 }, // end methods
 created() {
   this.handleReset();

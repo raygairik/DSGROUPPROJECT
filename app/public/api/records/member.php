@@ -4,14 +4,14 @@
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-if (isset($_GET['mid'])) {
-  $stmt = $db->prepare(
+if (isset($_GET['id'])) {
+   $stmt = $db->prepare(
     'SELECT * FROM Member
-    WHERE memberID = ?'
-  );
+     WHERE memberID = ?'
+   );
 
-  $stmt->execute([$_GET['mid']]);
-} else {
+   $stmt->execute([$_GET['id']]);
+ } else {
   $stmt = $db->prepare('SELECT * FROM Member');
   $stmt->execute();
 }

@@ -6,19 +6,22 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<header>
-<div class="row">
+<body>
+
+  <div class="row">
     <div class="col-xs-3 col-sm-2 col-md-1 col-lg-1">
-        <div id="TitleImage"><img src="img/logo.png" width="92">
-        </div>
+      <div id="TitleImage"><img src="img/logo.png" width="92">
+      </div>
     </div>
-        <div class="col-xs-7 col-sm-6 col-md-5" "col-lg-5" id=TitleWords>
-            <div class="row"><h1 class=whitewords>Oconee County Fire Rescue</h1>
-            </div>
-            <div class="row"><h4><i>"Stop, Drop, and Roll!"</i></h4>
-            </div>
-        </div>
+    <div class="col-xs-7 col-sm-6 col-md-5 col-lg-5" id="TitleWords">
+      <div class="row">
+        <h1 class="whitewords">Oconee County Fire Rescue</h1>
+      </div>
+      <div class="row">
+        <h4><i>"Stop, Drop, and Roll!"</i></h4>
+      </div>
     </div>
+  </div>
 
 <div class="row">
 <nav class="navbar navbar-default">
@@ -38,8 +41,7 @@
 </div>
 </nav>
 </div>
-<br>
-</table>
+
 <!-- <div class="container">
   <div class="row">
     <div class="col">
@@ -61,37 +63,19 @@
   </div>
 </div> -->
 
-<h1 style="background-color:rgb(o,o,o);">Add A Certification</h1><form>
+<h1 style="background-color:rgb(o,o,o);">Add A Certification</h1>
   <div class="container">
     <div class="row">
       <div id="mainContent" class="col-md">
         <div id="CertificationsApp">
 
-          <h1>Available Certifications</h1>
-          <table class="table table-sm table-hover">
-            <thead>
-              <tr>
-                <th>Certification ID</th>
-                <th>Certifying Agency</th>
-                <th>Certification Name</th>
-                <th>Expiration Period</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="c in certifications" @click="handleRowClick(c)">
-                <td>{{ c.CertificationID}}</td>
-                <td>{{ c.certifyingAgency }}</td>
-                <td>{{ c.certificationName}}</td>
-                <td>{{ c.expirationPeriod }}</td>
-              </tr>
-            </tbody>
-          </table>
+
 
           <form @submit.prevent="handleSubmit">
             <div class="form-group row">
               <label for="inputcertificationID" class="col-sm-2 col-form-label">Certification ID</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputcertificationID" placeholder="00000" v-model="recordCertification.CertificationID">
+                <input type="text" class="form-control" id="inputcertificationID" placeholder="00000" v-model="recordCertification.certificationID">
               </div>
             </div>
 
@@ -125,12 +109,66 @@
             </div>
           </form>
 
-</div>
 
+          <h1>Available Certifications</h1>
+          <table class="table table-sm table-hover">
+            <thead>
+              <tr>
+                <th>Certification ID</th>
+                <th>Certifying Agency</th>
+                <th>Certification Name</th>
+                <th>Expiration Period</th>
+                <th>Function</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="c in certifications" @click="handleRowClick(c)">
+                <td>{{ c.certificationID}}</td>
+                <td>{{ c.certifyingAgency }}</td>
+                <td>{{ c.certificationName}}</td>
+                <td>{{ c.expirationPeriod }}</td>
+                <td><div>
+                  <button @click="deleteTransaction(c)" class="btn btn-primary">DELETE
+                </button></div></td>
+              </tr>
+            </tbody>
+          </table>
+</div>
+<div id="EditcertificationApp">
+
+          <form @submit.prevent="handleEdit()">
+            <div class="row">
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control" placeholder="Certification Name" v-model="recordCertification.certificationName" >
+              </div>
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control" placeholder="Certification Agency" v-model="recordCertification.certifyingAgency" >
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-4">
+                <input type="Integer" class="form-control" placeholder="2001-12-13" v-model="recordCertification.expirationPeriod" >
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Edit Certification</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+</div>
+</div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="js/certification.app.js"></script>
+<script src="js/EditcertificationApp.app.js"></script>
 
-</header>
+
+</body>
 </html>

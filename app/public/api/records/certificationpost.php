@@ -10,15 +10,15 @@ $db = DbConnection::getConnection();
 $stmt = $db->prepare(
   'INSERT INTO Certification
     (certificationID, certifyingagency, certificationName, expirationPeriod)
-  VALUES (?, ?, ?, ?, ?)'
+  VALUES (?, ?, ?, ?)'
 );
 $stmt->execute([
   $cid,
-  $_POST['certificationID'],
+  //$_POST['certificationID'],
   $_POST['certifyingAgency'],
   $_POST['certificationName'],
   $_POST['expirationPeriod']
 ]);
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../records/?cid='.$cid);
+header('Location: ../records/certification.php/?cid='.$cid);

@@ -1,4 +1,3 @@
-hi
 CREATE DATABASE OCFR;
 
 USE OCFR;
@@ -27,15 +26,15 @@ CREATE TABLE Member (
 );
 
 CREATE TABLE Certification (
-  certificationID VARCHAR(5) PRIMARY KEY,
+  certificationID VARCAHR(5) PRIMARY KEY,
   certifyingAgency VARCHAR(64),
   certificationName VARCHAR(64),
   expirationPeriod integer
 );
 
 CREATE TABLE CertDetail (
-  certificationID VARCHAR(5),
-  memberID VARCHAR(5),
+  certificationID INT(5),
+  memberID INT(5),
   renewalDate DATE DEFAULT NULL,
   expirationDate DATE DEFAULT NULL,
   PRIMARY KEY (certificationID, memberID)

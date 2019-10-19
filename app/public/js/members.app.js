@@ -3,18 +3,17 @@ var MemberRecordsApp = new Vue({
   data: {
     members: [],
     recordMember: {}
-
   },
   methods: {
     fetchMembers() {
-      fetch('api/records/')
+      fetch('api/records/member.php')
       .then(response => response.json())
       .then(json => { MemberRecordsApp.members = json})
 
     },
 
     handleSubmit(event) {
-          fetch('api/records/member.php', {
+          fetch('api/records/memberpost.php', {
             method: 'POST',
             body: JSON.stringify(this.recordMember),
             headers: {
@@ -37,7 +36,7 @@ var MemberRecordsApp = new Vue({
       dob: '',
       Gender: '',
       Email: '',
-      address: '',
+      Address: '',
       City: '',
       State: '',
       ZIPCode: '',
