@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+<header>
   <div class="row">
     <div class="col-xs-3 col-sm-2 col-md-1 col-lg-1">
       <div id="TitleImage"><img src="img/logo.png" width="92">
@@ -41,7 +41,7 @@
 </div>
 </nav>
 </div>
-
+</header>
 <!-- <div class="container">
   <div class="row">
     <div class="col">
@@ -63,13 +63,13 @@
   </div>
 </div> -->
 
-<h1 style="background-color:rgb(o,o,o);">Add A Certification</h1>
+
   <div class="container">
     <div class="row">
       <div id="mainContent" class="col-md">
         <div id="CertificationsApp">
-
-
+<div id="outline">
+<h1 style="background-color:rgb(o,o,o);">Add A Certification</h1>
 
           <form @submit.prevent="handleSubmit">
             <div class="form-group row">
@@ -108,7 +108,7 @@
               </div>
             </div>
           </form>
-
+</div>
 
           <h1>Available Certifications</h1>
           <table class="table table-sm table-hover">

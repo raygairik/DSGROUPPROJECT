@@ -49,7 +49,7 @@ h1 {
 font-size: 300%;
 margin-bottom: 10px;
 margin-top: 0px;
-color: white;
+color: black;
 padding: inherit;
 }
 
@@ -58,13 +58,34 @@ h2 {
   font-size: 48px;
 }
 
+.whitewords {
+  color: white;
+}
+
+
 h3{
 color: black;
 font-style: italic;
 }
 
 body {
-background-color: lightgrey;
+background-color: white;
+color: black
+}
+
+#grey {
+  background-color: maroon;
+  padding: 10px;
+}
+
+#outline {
+  outline-style: solid;
+  outline-color: black;
+  padding: 10px;
+  background-color: rgb(255, 153, 153);
+}
+table {
+  border: black;
 }
 header, nav, main, footer {
             border: 1px solid black;
