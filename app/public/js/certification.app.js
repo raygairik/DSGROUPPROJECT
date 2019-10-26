@@ -41,7 +41,7 @@ var CertificationsApp = new Vue({
   handleRowClick(certifications) {
     EditcertificationApp.recordCertification = certifications;
   },
-    deleteTransaction(C){
+    deleteTransaction(c){
       fetch('api/records/certificationDelete.php', {
         method: 'POST',
         body: JSON.stringify(c),

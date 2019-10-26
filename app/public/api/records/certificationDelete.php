@@ -16,4 +16,4 @@ $stmt->execute([
 $cid=$_POST['certificationID'];
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../records/?cid='.$cid);
+header('Location: ../records/certification.php/?cid='.$cid);
