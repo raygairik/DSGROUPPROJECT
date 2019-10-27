@@ -36,7 +36,7 @@ var MemberRecordsApp = new Vue({
       dob: '',
       Gender: '',
       Email: '',
-      Address: '',
+      address: '',
       City: '',
       State: '',
       ZIPCode: '',

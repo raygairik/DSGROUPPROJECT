@@ -4,17 +4,17 @@
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-if (isset($_GET['id'])) {
-   $stmt = $db->prepare(
-    'SELECT * FROM Member
-     WHERE memberID = ?'
-   );
-
-   $stmt->execute([$_GET['id']]);
- } else {
+// if (isset($_GET['id'])) {
+//    $stmt = $db->prepare(
+//     'SELECT * FROM Member
+//      WHERE memberID = ?'
+//    );
+//
+//    $stmt->execute([$_GET['id']]);
+//  } else {
   $stmt = $db->prepare('SELECT * FROM Member');
   $stmt->execute();
-}
+
 
 $members = $stmt->fetchAll();
 

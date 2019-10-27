@@ -29,7 +29,7 @@ var EditmemberApp = new Vue({
       dob: '',
       Gender: '',
       Email: '',
-      Address: '',
+      address: '',
       City: '',
       State: '',
       ZIPCode: '',
