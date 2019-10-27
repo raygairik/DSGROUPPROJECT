@@ -55,6 +55,7 @@
         <div class="row">
           <div class="col-md">
             <div id="recordsApp">
+
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <div class="input-group-prepend">
@@ -83,10 +84,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="c in enrollments"
+          <tr v-for="c in reports"
           v-if="filter.certificationID == '' || filter.certificationID == c.certificationID">
             <td>{{ c.certificationName }}</td>
-            <td>{{ c.firstName }} {{p.lastName}}</td>
+            <td>{{ c.firstName }} {{c.lastName}}</td>
             <td>{{ c.dob }}</td>
             <td>{{ c.Gender }}</td>
             <td>{{ c.certificationIsActive }}</td>
