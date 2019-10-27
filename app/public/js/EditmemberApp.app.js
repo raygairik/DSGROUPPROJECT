@@ -1,7 +1,7 @@
 var EditmemberApp = new Vue({
   el: '#EditmemberApp',
   data: {
-    recordmember: {}
+    recordMember: {}
   },
   methods: {
     handleEdit() {
@@ -19,7 +19,7 @@ var EditmemberApp = new Vue({
     },
 
     handleReset() {
-    this.recordmember = {
+    this.recordMember = {
       //certificationID: '',
       // certifyingAgency: '',
       // certificationName: '',

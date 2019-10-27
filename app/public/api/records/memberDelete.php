@@ -16,4 +16,4 @@ $stmt->execute([
 $mid=$_POST['memberID'];
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../records/?mid='.$mid);
+header('Location: ../records/member.php/?mid='.$mid);
