@@ -48,26 +48,6 @@
 </nav>
 </div>
 </header>
-<!-- <div class="container">
-  <div class="row">
-    <div class="col">
-    </div>
-    <div class="col">
-
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-
-    </div>
-    <div class="col">
-
-    </div>
-    <div class="col">
-
-    </div>
-  </div>
-</div> -->
 
 
   <div class="container">
@@ -76,12 +56,6 @@
         <div id="CertificationsApp">
         <div id="outline">
           <form @submit.prevent="handleSubmit">
-            <!-- <div class="form-group row">
-              <label for="inputcertificationID" class="col-sm-2 col-form-label">Certification ID</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputcertificationID" placeholder="00000" v-model="recordCertification.certificationID">
-              </div>
-            </div> -->
 
             <div class="form-group row">
               <label for="inputcertifyingAgency" class="col-sm-2 col-form-label">Certifying Agency</label>
@@ -118,7 +92,7 @@
           <table class="table table-sm table-hover" id="taskTable">
             <thead>
               <tr>
-                <!-- <th>Certification ID</th> -->
+
                 <th>Certifying Agency</th>
                 <th>Certification Name</th>
                 <th>Expiration Period</th>
@@ -127,7 +101,6 @@
             </thead>
             <tbody>
               <tr v-for="c in certifications" @click="handleRowClick(c)">
-                <!-- <td>{{ c.certificationID}}</td> -->
                 <td>{{ c.certifyingAgency }}</td>
                 <td>{{ c.certificationName}}</td>
                 <td>{{ c.expirationPeriod }}</td>
