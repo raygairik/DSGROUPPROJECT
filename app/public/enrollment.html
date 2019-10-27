@@ -38,71 +38,61 @@
           <a class="nav-link" href="certifications.html">Certifications <span class="sr-only">(current)</span></a>
         </li>
 <li class="nav-item active">
-         <a class="nav-link" href="certifications.html">Allotment <span class="sr-only">(current)</span></a>
+         <a class="nav-link" href="enrollment.html">Allotment <span class="sr-only">(current)</span></a>
         </li>
 <li class="nav-item active">
-                <a class="nav-link" href="certifications.html">Reports <span class="sr-only">(current)</span></a>
-                </li>
+        <a class="nav-link" href="reports.html">Reports <span class="sr-only">(current)</span></a>
+        </li>
 </ul>
 </div>
 </nav>
 </div>
 </header>
-<!-- <div class="container">
-  <div class="row">
-    <div class="col">
-    </div>
-    <div class="col">
-
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-
-    </div>
-    <div class="col">
-
-    </div>
-    <div class="col">
-
-    </div>
-  </div>
-</div> -->
-
 
   <div class="container">
     <div class="row">
       <div id="mainContent" class="col-md">
-        <div id="CertificationsApp">
-<div id="outline">
-<h1 style="background-color:rgb(o,o,o);">Add A Certification</h1>
-
+        <div id="EnrollmentApp">
+        <div id="outline">
           <form @submit.prevent="handleSubmit">
+            <!-- <div class="form-group row">
+              <label for="inputcertificationID" class="col-sm-2 col-form-label">enrollmentID</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputenrollmentID" placeholder="00000" v-model="recordenrollments.enrollmentID">
+              </div>
+            </div> -->
             <div class="form-group row">
               <label for="inputcertificationID" class="col-sm-2 col-form-label">Certification ID</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputcertificationID" placeholder="00000" v-model="recordCertification.certificationID">
+                <input type="text" class="form-control" id="inputcertificationID" placeholder="00000" v-model="recordenrollments.certificationID">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="inputcertifyingAgency" class="col-sm-2 col-form-label">Certifying Agency</label>
+              <label for="inputcertifyingAgency" class="col-sm-2 col-form-label">Member ID</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputcertifyingAgency" placeholder="American Red Cross" v-model="recordCertification.certifyingAgency">
+                <input type="text" class="form-control" id="inputMemberID" placeholder="memberID" v-model="recordenrollments.memberID">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="inputcertificationName" class="col-sm-2 col-form-label">Certification Name</label>
+              <label for="inputcertifyingAgency" class="col-sm-2 col-form-label">certificationIsActive</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputcertificationName" placeholder="CPR Certified" v-model="recordCertification.certificationName">
+                <input type="text" class="form-control" id="inputcertificationIsActive" placeholder="certificationIsActive" v-model="recordenrollments.certificationIsActive">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="inputexpirationPeriod" class="col-sm-2 col-form-label">Expiration Period</label>
+              <label for="inputcertifyingAgency" class="col-sm-2 col-form-label">certificationStartDate</label>
               <div class="col-sm-10">
-                <input type="integer" class="form-control" id="inputexpirationPeriod" placeholder="3" v-model="recordCertification.expirationPeriod">
+                <input type="text" class="form-control" id="certificationStartDate" placeholder="certificationStartDate" v-model="recordenrollments.certificationStartDate">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputcertifyingAgency" class="col-sm-2 col-form-label">certificationEndDate</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="certificationEndDate" placeholder="certificationEndDate" v-model="recordenrollments.certificationEndDate">
               </div>
             </div>
 
@@ -110,57 +100,68 @@
 
             <div class="form-group row">
               <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary">Create Certification</button>
+                <button type="submit" class="btn btn-primary">Create Enrollment</button>
               </div>
             </div>
           </form>
 </div>
 
-          <h1>Available Certifications</h1>
+          <h1>Available Enrollments</h1>
           <table class="table table-sm table-hover">
             <thead>
               <tr>
+                <!-- <th>enrollmentID</th> -->
                 <th>Certification ID</th>
-                <th>Certifying Agency</th>
-                <th>Certification Name</th>
-                <th>Expiration Period</th>
-                <th>Function</th>
+                <th>Member ID</th>
+                <th>certificationIsActive</th>
+                <th>certificationStartDate</th>
+                <th>certificationEndDate</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="c in certifications" @click="handleRowClick(c)">
-                <td>{{ c.certificationID}}</td>
-                <td>{{ c.certifyingAgency }}</td>
-                <td>{{ c.certificationName}}</td>
-                <td>{{ c.expirationPeriod }}</td>
+              <tr v-for="e in enrollments" @click="handleRowClick(e)">
+                <!-- <td>{{ e.enrollmentID}}</td> -->
+                <td>{{ e.certificationID }}</td>
+                <td>{{ e.memberID}}</td>
+                <td>{{ e.certificationIsActive }}</td>
+                <td>{{ e.certificationStartDate }}</td>
+                <td>{{ e.certificationEndDate }}</td>
                 <td><div>
-                  <button @click="deleteTransaction(c)" class="btn btn-primary">DELETE
+                  <button @click="deleteTransaction(e)" class="btn btn-primary">DELETE
                 </button></div></td>
               </tr>
             </tbody>
           </table>
 </div>
-<div id="EditcertificationApp">
+<div id="editenrollment">
 
           <form @submit.prevent="handleEdit()">
             <div class="row">
               <div class="form-group col-md-6">
-                <input type="text" class="form-control" placeholder="Certification Name" v-model="recordCertification.certificationName" >
+                <input type="text" class="form-control" placeholder="certificationID" v-model="recordenrollments.certificationID" >
               </div>
               <div class="form-group col-md-6">
-                <input type="text" class="form-control" placeholder="Certification Agency" v-model="recordCertification.certifyingAgency" >
+                <input type="text" class="form-control" placeholder="memberID" v-model="recordenrollments.memberID" >
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control" placeholder="certificationIsActive" v-model="recordenrollments.certificationIsActive" >
+              </div>
+              <div class="form-group col-md-6">
+                <input type="Integer" class="form-control" placeholder="certificationStartDate" v-model="recordenrollments.certificationStartDate" >
               </div>
             </div>
 
             <div class="row">
               <div class="form-group col-md-4">
-                <input type="Integer" class="form-control" placeholder="2001-12-13" v-model="recordCertification.expirationPeriod" >
+                <input type="Integer" class="form-control" placeholder="9999-99-99" v-model="recordenrollments.certificationEndDate" >
               </div>
             </div>
 
             <div class="form-group row">
               <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary">Edit Certification</button>
+                <button type="submit" class="btn btn-primary">Edit Enrollments</button>
               </div>
             </div>
           </form>
@@ -172,8 +173,8 @@
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script src="js/certification.app.js"></script>
-<script src="js/EditcertificationApp.app.js"></script>
+<script src="js/enrollment.app.js"></script>
+<script src="js/editenrollment.app.js"></script>
 
 
 </body>

@@ -13,17 +13,13 @@ var EditmemberApp = new Vue({
       }
     })
     .then( response => response.json() )
-    .then( json => {MemberRecordsApp.recordmember = json})
+    .then( json => {MemberRecordsApp.recordMember = json});
     this.handleReset();
 
     },
 
     handleReset() {
     this.recordMember = {
-      //certificationID: '',
-      // certifyingAgency: '',
-      // certificationName: '',
-      // expirationPeriod: ''
       firstName: '',
       lastName: '',
       dob: '',

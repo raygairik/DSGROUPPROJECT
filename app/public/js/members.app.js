@@ -50,7 +50,7 @@ var MemberRecordsApp = new Vue({
     }
   },
   handleRowClick(members) {
-    EditmemberApp.recordMember = Member;
+    EditmemberApp.recordMember = members;
   },
   deleteTransaction(m){
     fetch('api/records/memberDelete.php', {

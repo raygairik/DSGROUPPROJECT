@@ -5,16 +5,15 @@
 $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'UPDATE Member
-    set firstName = ?, lastName = ?
-    where memberID = ?');
+  'DELETE FROM CertDetail
+    WHERE enrollmentID = ?'
+);
 $stmt->execute([
-  $_POST['firstName'],
-  $_POST['lastName'],
-  $_POST['memberID']
+  $_POST['enrollmentID']
+
 ]);
 
-$mid=$_POST['memberID'];
+$mid=$_POST['enrollmentID'];
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../records/member.php/?mid='.$mid);
+header('Location: ../records/enrollment.php/?eid='.$eid);
