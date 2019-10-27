@@ -11,8 +11,8 @@ $db = DbConnection::getConnection();
 //   );
 //   $stmt->execute([$_GET['guid']]);
 // } else {
-$stmt = $db->prepare('SELECT m.firstName, m.lastName,m.dob,m.gender, c.certificationName,c.certificationID,c.certificationAgency, mc.certificationIsActive,mc.certificationStartDate,mc.certificationEndDate
-FROM memberCertify mc , member m, certification c
+$stmt = $db->prepare('SELECT m.firstName, m.lastName,m.dob,m.Gender, c.certificationName,c.certificationID,c.certifyingAgency, mc.certificationIsActive,mc.certificationStartDate,mc.certificationEndDate
+FROM CertDetail mc , Member m, Certification c
 WHERE mc.certificationID = c.certificationID
 AND mc.memberID= m.memberID
 and mc.certificationIsActive=0');

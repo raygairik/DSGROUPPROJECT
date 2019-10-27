@@ -11,8 +11,8 @@ $db = DbConnection::getConnection();
 //   );
 //   $stmt->execute([$_GET['guid']]);
 // } else {
-$stmt = $db->prepare('SELECT m.firstName, m.lastName,m.radioNumber,m.dob,m.stationNumber,m.email,m.gender
-FROM member m');
+$stmt = $db->prepare('SELECT firstName,lastName,Radio,dob,Station,Email,Gender
+FROM Member');
 $stmt->execute();
 // }
 

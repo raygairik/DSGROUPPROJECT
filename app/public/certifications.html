@@ -115,7 +115,7 @@
 </div>
 
           <h1>Available Certifications</h1>
-          <table class="table table-sm table-hover">
+          <table class="table table-sm table-hover" id="taskTable">
             <thead>
               <tr>
                 <!-- <th>Certification ID</th> -->
@@ -172,7 +172,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="js/certification.app.js"></script>
 <script src="js/EditcertificationApp.app.js"></script>
-
+<script src="js/tablesort.min.js" > </script>
+<script>
+new Tablesort(document.getElementById('taskTable'));
+</script>
 
 </body>
 </html>

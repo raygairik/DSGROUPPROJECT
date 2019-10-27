@@ -63,7 +63,7 @@
                 <div class="filter">
                   <select class="custom-select" id="inputGroupSelect01" v-model="filter.certificationID">
                     <option value="">(all)</option>
-                    <option v-for="c in Certification" :value="c.certificationID">{{c.certificationName}}</option>
+                    <option v-for="c in certifications" :value="c.certificationID">{{c.certificationName}}</option>
                   </select>
                 </div>
               </div>
@@ -83,15 +83,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="p in reports"
-          v-if="filter.certificationID=='' || filter.certificationID==p.certificationID">
-            <td>{{ p.certificationName }}</td>
-            <td>{{ p.firstName }} {{p.lastName}}</td>
-            <td>{{ p.dob }}</td>
-            <td>{{ p.gender }}</td>
-            <td>{{ p.certificationIsActive }}</td>
-            <td>{{ p.certificationStartDate }}</td>
-            <td>{{ p.certificationEndDate }}</td>
+          <tr v-for="c in enrollments"
+          v-if="filter.certificationID == '' || filter.certificationID == c.certificationID">
+            <td>{{ c.certificationName }}</td>
+            <td>{{ c.firstName }} {{p.lastName}}</td>
+            <td>{{ c.dob }}</td>
+            <td>{{ c.Gender }}</td>
+            <td>{{ c.certificationIsActive }}</td>
+            <td>{{ c.certificationStartDate }}</td>
+            <td>{{ c.certificationEndDate }}</td>
           </tr>
         </tbody>
       </table>
@@ -105,9 +105,9 @@
             <label class="input-group-text" for="inputGroup1">Radio Number</label>
           </div>
           <div class="filter">
-            <select class="custom-select" id="inputGroup1" v-model="filter.radioNumber">
+            <select class="custom-select" id="inputGroup1" v-model="filter.Radio">
               <option value="">(all)</option>
-              <option v-for="r in members" :value="r.radioNumber">{{r.radioNumber}}</option>
+              <option v-for="r in members" :value="r.Radio">{{r.Radio}}</option>
             </select>
           </div>
 
@@ -115,9 +115,9 @@
             <label class="input-group-text" for="inputGroup2">Station Number</label>
           </div>
           <div class="filter">
-            <select class="custom-select" id="inputGroup2" v-model="filter.stationNumber">
+            <select class="custom-select" id="inputGroup2" v-model="filter.Station">
               <option value="">(all)</option>
-              <option v-for="r in members" :value="r.stationNumber">{{r.stationNumber}}</option>
+              <option v-for="r in members" :value="r.Station">{{r.Station}}</option>
             </select>
           </div>
 
@@ -137,14 +137,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="p in reportRadio"
-          v-if="(filter.radioNumber=='' || filter.radioNumber==p.radioNumber) && (filter.stationNumber=='' || filter.stationNumber==p.stationNumber)">
-            <td>{{ p.firstName }} {{p.lastName}}</td>
-            <td>{{ p.dob }}</td>
-            <td>{{ p.gender }}</td>
-            <td>{{ p.radioNumber }}</td>
-            <td>{{ p.stationNumber }}</td>
-            <td>{{ p.email }}</td>
+          <tr v-for="r in reportRadio"
+          v-if="(filter.Radio=='' || filter.Radio==r.Radio) && (filter.Station=='' || filter.Station==r.Station)">
+            <td>{{ r.firstName }} {{r.lastName}}</td>
+            <td>{{ r.dob }}</td>
+            <td>{{ r.Gender }}</td>
+            <td>{{ r.Radio }}</td>
+            <td>{{ r.Station }}</td>
+            <td>{{ r.Email }}</td>
           </tr>
         </tbody>
       </table>
@@ -161,7 +161,6 @@
             <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
             <script src="js/recordsApp.js"></script>
-            <!-- <script src="js/EditreportApp.app.js"></script> -->
 
 </body>
 </html>

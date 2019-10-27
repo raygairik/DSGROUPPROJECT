@@ -24,11 +24,11 @@ var recordsApp = new Vue({
       .then(response => response.json())
       .then(json => { recordsApp.reports = json })
     }, // end methods
-    fetchRadioStationRecords() {
-      fetch('api/records/reportradio.php')
-      .then(response => response.json())
-      .then(json => { recordsApp.reportRadio = json })
-    }, // end methods
+    // fetchRadioStationRecords() {
+    //   fetch('api/records/reportradio.php')
+    //   .then(response => response.json())
+    //   .then(json => { recordsApp.reportRadio = json })
+    // }, // end methods
     fetchMembers() {
       fetch('api/records/member.php')
       .then(response => response.json())
@@ -40,6 +40,6 @@ created() {
   this.fetchExpiredRecords();
   this.fetchCertificates();
   this.fetchMembers();
-  this.fetchRadioStationRecords();
+  // this.fetchRadioStationRecords();
 }
 });
