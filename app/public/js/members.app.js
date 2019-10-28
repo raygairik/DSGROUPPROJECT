@@ -9,7 +9,6 @@ var MemberRecordsApp = new Vue({
       fetch('api/records/member.php')
       .then(response => response.json())
       .then(json => { MemberRecordsApp.members = json})
-
     },
 
     handleSubmit(event) {
@@ -28,6 +27,7 @@ var MemberRecordsApp = new Vue({
           });
           this.handleReset();
         },
+
   handleReset() {
     this.recordMember = {
       memberID: '',
@@ -63,8 +63,7 @@ var MemberRecordsApp = new Vue({
     .then( response => response.json() )
     .then( json => {MemberRecordsApp.members = json})
   }
-
-}, // end methods
+},
 created() {
   this.handleReset();
   this.fetchMembers();

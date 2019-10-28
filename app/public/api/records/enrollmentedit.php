@@ -1,9 +1,7 @@
 <?php
 
-
-// Step 1: Get a datase connection from our help class
 $db = DbConnection::getConnection();
-// Step 2: Create & run the query
+
 $stmt = $db->prepare(
   'UPDATE CertDetail
     set certificationID = ?, memberID = ?,certificationIsActive = ?, certificationStartDate = ?, certificationEndDate = ?
@@ -16,8 +14,7 @@ $stmt->execute([
   $_POST['certificationEndDate'],
   $_POST['enrollmentID']
 ]);
-
 $eid=$_POST['enrollmentID'];
-// Step 4: Output
+
 header('HTTP/1.1 303 See Other');
-header('Location: ../records/member.php/?eid='.$eid);
+header('Location: ../records/enrollment.php/?eid='.$eid);

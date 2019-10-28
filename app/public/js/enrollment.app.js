@@ -28,6 +28,7 @@ var EnrollmentApp = new Vue({
           });
           this.handleReset();
         },
+
   handleReset() {
     this.recordenrollments = {
       enrollmentID: '',
@@ -41,6 +42,7 @@ var EnrollmentApp = new Vue({
   handleRowClick(e) {
     editenrollment.recordenrollments = e;
   },
+
     deleteTransaction(e){
       fetch('api/records/enrollmentdelete.php', {
         method: 'POST',
@@ -52,10 +54,7 @@ var EnrollmentApp = new Vue({
       .then( response => response.json() )
       .then( json => {EnrollmentApp.enrollments = json})
     }
-
-
-
-}, // end methods
+},
 created() {
   this.handleReset();
   this.fetchEnrollments();

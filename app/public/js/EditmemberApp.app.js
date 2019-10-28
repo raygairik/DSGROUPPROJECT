@@ -15,7 +15,6 @@ var EditmemberApp = new Vue({
     .then( response => response.json() )
     .then( json => {MemberRecordsApp.recordMember = json});
     this.handleReset();
-
     },
 
     handleReset() {
@@ -35,11 +34,9 @@ var EditmemberApp = new Vue({
       Radio: '',
       Station: '',
       isActive: ''
-
     }
   }
-
-}, // end methods
+},
 created() {
   this.handleReset();
 }

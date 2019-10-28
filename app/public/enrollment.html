@@ -2,7 +2,6 @@
 <html>
 <head>
   <title>OCFR Page</title>
-
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -110,7 +109,6 @@
           <table class="table table-sm table-hover" id="taskTable">
             <thead>
               <tr>
-                <!-- <th>enrollmentID</th> -->
                 <th>Certification ID</th>
                 <th>Member ID</th>
                 <th>certificationIsActive</th>
@@ -120,7 +118,6 @@
             </thead>
             <tbody>
               <tr v-for="e in enrollments" @click="handleRowClick(e)">
-                <!-- <td>{{ e.enrollmentID}}</td> -->
                 <td>{{ e.certificationID }}</td>
                 <td>{{ e.memberID}}</td>
                 <td>{{ e.certificationIsActive }}</td>
@@ -134,7 +131,6 @@
           </table>
 </div>
 <div id="editenrollment">
-
           <form @submit.prevent="handleEdit()">
             <div class="row">
               <div class="form-group col-md-6">
@@ -166,7 +162,6 @@
             </div>
           </form>
         </div>
-
 </div>
 </div>
 </div>
@@ -179,6 +174,5 @@
 <script>
 new Tablesort(document.getElementById('taskTable'));
 </script>
-
 </body>
 </html>

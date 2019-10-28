@@ -3,14 +3,12 @@ var CertificationsApp = new Vue({
   data: {
     certifications: [],
     recordCertification: {}
-
   },
   methods: {
     fetchCertifications() {
       fetch('api/records/certification.php')
       .then(response => response.json())
       .then(json => { CertificationsApp.certifications = json})
-
     },
 
     handleSubmit(event) {
@@ -29,18 +27,20 @@ var CertificationsApp = new Vue({
           });
           this.handleReset();
         },
+
   handleReset() {
     this.recordCertification = {
       certificationID: '',
       certifyingAgency: '',
       certificationName: '',
       expirationPeriod: ''
-
     }
   },
+
   handleRowClick(certifications) {
     EditcertificationApp.recordCertification = certifications;
   },
+
     deleteTransaction(c){
       fetch('api/records/certificationDelete.php', {
         method: 'POST',
@@ -52,10 +52,8 @@ var CertificationsApp = new Vue({
       .then( response => response.json() )
       .then( json => {CertificationsApp.certifications = json})
     }
+},
 
-
-
-}, // end methods
 created() {
   this.handleReset();
   this.fetchCertifications();

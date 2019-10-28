@@ -9,13 +9,12 @@ var EditcertificationApp = new Vue({
       method: 'POST',
       body: JSON.stringify(this.recordCertification),
       headers: {
-        "Content-Type": "application/json; charset=utf-8"
+      "Content-Type": "application/json; charset=utf-8"
       }
     })
     .then( response => response.json() )
     .then( json => {CertificationsApp.recordCertification = json})
     this.handleReset();
-
     },
 
     handleReset() {
@@ -24,11 +23,9 @@ var EditcertificationApp = new Vue({
       certifyingAgency: '',
       certificationName: '',
       expirationPeriod: ''
-
     }
   }
-
-}, // end methods
+},
 created() {
   this.handleReset();
 }

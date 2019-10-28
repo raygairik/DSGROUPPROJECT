@@ -15,22 +15,18 @@ var editenrollment = new Vue({
     .then( response => response.json() )
     .then( json => {EnrollmentApp.recordenrollments = json})
     this.handleReset();
-
     },
 
     handleReset() {
     this.recordenrollments = {
-      //enrollmentID: '',
       certificationID: '',
       memberID: '',
       certificationIsActive: '',
       certificationStartDate: '',
       certificationEndDate: ''
-
     }
   }
-
-}, // end methods
+},
 created() {
   this.handleReset();
 }
